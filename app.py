@@ -183,6 +183,7 @@ with gr.Blocks() as app:
             )
 
             seed = gr.Slider(
+                visible=False,
                 label="Seed",
                 minimum=0,
                 maximum=MAX_SEED,
@@ -190,7 +191,7 @@ with gr.Blocks() as app:
                 value=0,
             )
             randomize_seed = gr.Checkbox(label="Randomize seed", value=True)
-            with gr.Row():
+            with gr.Row(visible=False):
                 with gr.Column():
                     width = gr.Slider(
                         label="Width",
@@ -199,7 +200,7 @@ with gr.Blocks() as app:
                         step=64,
                         value=1024,
                     )
-                with gr.Column():
+                with gr.Column(visible=False):
                     height = gr.Slider(
                         label="Height",
                         minimum=512,
@@ -207,7 +208,7 @@ with gr.Blocks() as app:
                         step=64,
                         value=1024,
                     )
-            with gr.Row():
+            with gr.Row(visible=False):
                 with gr.Column():
                     batch_size_per_prompt = gr.Slider(
                         label="Batch Size",
@@ -224,7 +225,7 @@ with gr.Blocks() as app:
                         step=1,
                         value=1,
                     )
-            with gr.Row():
+            with gr.Row(visible=False):
                 with gr.Column():
                     prior_guidance_scale = gr.Slider(
                         label="Prior Guidance Scale (CFG)",
@@ -241,7 +242,7 @@ with gr.Blocks() as app:
                         step=0.1,
                         value=0.0,
                     )
-            with gr.Row():
+            with gr.Row(visible=False):
                 with gr.Column():
                     prior_num_inference_steps = gr.Slider(
                         label="Prior Inference Steps",
